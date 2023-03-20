@@ -108,3 +108,13 @@ void string_wipe_whitespaces(char s[]) {
     }*/
     printf("(inizio)%s(fine)\n", s);
 }
+
+int string_how_many(char c, char s[]) {
+    int i, count = 0;
+    for(i = 0; s[i] != '\0'; i++) {
+        if(s[i] == c) {
+            count++;
+        }
+    }
+    return count;
+}
