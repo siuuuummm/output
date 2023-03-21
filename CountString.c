@@ -1,21 +1,22 @@
 #include <stdio.h>
+#include <string.h>
+#define MAX_LINE_LENGTH 1024
 
 int main() {
-    char s[100];
-    int i = 0, count = 0;
+    char line[MAX_LINE_LENGTH];
+    char *token;
+    
     printf("Inserire una frase: ");
-    fgets(s, sizeof(s), stdin);
-
-    while(s[i] != '\0') {
-        if(s[i] != ' ') {
-            count++;
-            i++;
-        } else {
-            s[i] = count;
-            printf("%d\n", count);
-            count = 0;
-            i++;
+    // Legge una linea alla volta dallo standard input
+    while (fgets(line, MAX_LINE_LENGTH, stdin)) {
+        // Processa la linea per ottenere i conteggi
+        token = strtok(line, " \n"); // Estrae la prima parola
+        while (token != NULL) {
+            printf("%ld ", strlen(token)); // Stampa la dimensione della parola
+            token = strtok(NULL, " \n"); // Estrae la prossima parola
         }
+        printf("\n"); // Termina la riga di output
     }
-    printf("Dimensioni parole: %d\n", s[i]);
+    
+    return 0;
 }
