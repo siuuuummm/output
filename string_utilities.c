@@ -23,6 +23,6 @@ int main() {
     printf("%d\n", string_is_palindrome(s1));
     //printf("%d\n", string_compare(s1, s2));
     //string_wipe_whitespaces(s1);
-    printf("Ci sono %d occorrenze della lettera g", string_how_many('g', s1));
+    printf("Ci sono %d occorrenze della lettera g\n", string_how_many('g', s1));
     return 0;
 }
