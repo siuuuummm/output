@@ -118,3 +118,14 @@ int string_how_many(char c, char s[]) {
     }
     return count;
 }
+
+
+int string_how_many(char c, char s[]) {
+    int i, count = 0;
+    for(i = 0; s[i] != '\0'; i++) {
+        if(s[i] == c) {
+            count++;
+        }
+    }
+    return count;
+}
