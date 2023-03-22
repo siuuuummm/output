@@ -18,11 +18,11 @@ int main() {
 
     printf("Composizione: \n");
     printf("La stringa è lunga %d caratteri\n", slength(s1));
-    //printf("%s\n", scut_last_word(s));
+    printf("%p\n", scut_last_word(s1));
     printf("%d\n", string_is_empty(s1));
     printf("%d\n", string_is_palindrome(s1));
     //printf("%d\n", string_compare(s1, s2));
-    //string_wipe_whitespaces(s1);
-    printf("Ci sono %d occorrenze della lettera g\n", string_how_many('g', s1));
+    string_wipe_whitespaces(s1);
+    //printf("Ci sono %d occorrenze della lettera g\n", string_how_many('g', s1));
     return 0;
 }
