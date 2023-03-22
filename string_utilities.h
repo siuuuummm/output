@@ -13,7 +13,7 @@ int slength(char s[]) {
 }
 
 char *scut_last_word(char s[]) {
-    int i, count = 0, len = 0;
+    int i, count = 0;
     for(i = 0; s[i] != '\0'; i++) {
         if(s[i] == ' ') {
             count = i;
@@ -27,18 +27,6 @@ char *scut_last_word(char s[]) {
         }
     }
     return s;
-    /*for(i = 0; s[i] != '\0'; i++) {
-        len++;
-    }
-    if(len > 1) {
-        for(i = len - 1; s[i] != ' '; i--) {
-            s[i] = '\0' ;
-        }
-    } else{
-        s = "";
-    }
-    return s;
-    */
 }
 
 int string_is_empty(char s[]) {
@@ -93,7 +81,6 @@ void string_wipe_whitespaces(char s[]) {
         } else {
             s[j] = '\0'; 
         }
-        printf("(inizia)%s(fin)\n", s);
     }
     /*while(i < len) {
         if(s[i] == ' ' && s[i + 1] == ' ' || s[i + 1] == '\0') {
@@ -108,17 +95,6 @@ void string_wipe_whitespaces(char s[]) {
     }*/
     printf("(inizio)%s(fine)\n", s);
 }
-
-int string_how_many(char c, char s[]) {
-    int i, count = 0;
-    for(i = 0; s[i] != '\0'; i++) {
-        if(s[i] == c) {
-            count++;
-        }
-    }
-    return count;
-}
-
 
 int string_how_many(char c, char s[]) {
     int i, count = 0;
