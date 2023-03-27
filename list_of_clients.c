@@ -36,4 +36,5 @@ int main(int argc, char *argv[]){
       l=l_rem_cl(l, &cl);
       cl_print(cl);
    }
+   return 0;
 }
