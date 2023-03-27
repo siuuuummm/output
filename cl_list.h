@@ -3,6 +3,7 @@
 typedef struct _node {
     unsigned int id;
     client person;
+    struct _node *next;
 } l_node;
 
 typedef struct {
