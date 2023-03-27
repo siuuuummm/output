@@ -3,19 +3,25 @@
 #include <string.h>
 
 int main() {
-
-    char s[100];
-    char v[26] = 
-    int i, j, count = 0;
-
-    printf("Inserire una frase:\n");
+    char s[100];  
+    int  i,j,k,count=0,n;
+ 
+    printf("Inserire una frase: ");
     fgets(s, sizeof(s), stdin);
-
-    for(i = 0; i < strlen(s); i++) {
-        for(j = 0; s[i] >= 'a' && s[i] <= 'z'; j++)
-        count += s[i];
-    }
-
-    printf("occorrenze: %d della lettera %s",count , s);
+     
+    for(j=0;s[j];j++);
+	 n=j; 
+	for(i=0;i<n;i++)  {
+     	count=1;
+    	if(s[i]){
+ 		  for(j=i+1;j<n;j++){
+	        if(s[i]==s[j]){
+                count++;
+                s[j]='\0';
+	     	}
+	      }
+	      printf(" '%c' = %d \n",s[i],count);
+       }  
+ 	}
     return 0;
 }
