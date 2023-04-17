@@ -1,1 +1,2 @@
-gcc test-list-module.c list-module list-module.c -o final
+final:
+	gcc test-list-module.c list-module list-module.c
