@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct node {
 	int value;
@@ -31,7 +32,7 @@ list list_insert_tail(list p, int val);
 
 list list_delete_if(list head, int to_delete);
 
-list list _delete_odd(list head);
+list list_delete_odd(list head);
 
 list list_cut_below(list head, int cut_value);
 
@@ -57,10 +58,16 @@ int main()
 	head = list_insert_head(head, 10);
 	head = list_insert_head(head, 2);
 	head = list_insert_head(head, 15);
-    head = list_insert_ordered(head, 13);
+    head = list_insert_ordered(head, 16);
 	//l2 = list_insert_ordered(l2, 17);
 	//head = list_cat(head, l2);
 	head = list_insert_tail(head, 19);
+	//head = list_delete_if(head, 2);
+	//head = list_insert_head(head, 2);
+	head = list_insert_ordered(head, 7);
+	//head = list_delete_odd(head);
+	head = list_cut_below(head, 10);
+	head = list_dup(head);
 	/* ... print them... */
 	list_print(head);
 	/* ... and clean everything up  */
@@ -118,8 +125,69 @@ list list_insert_head(list p, int val)
 	return new_el;
 }
 
-list list_delete_if(list head, list to_delete) {
-	while(head)
+list list_delete_if(list head, int to_delete) {
+	list p = head, q;
+	if(head == NULL) {
+		return NULL;
+	} else {
+		if(head->value == to_delete) {
+			head = head->next;
+			free(p);
+			return head;
+		}
+		for(p = head; p->next != NULL; p = p->next) {
+			if(p->next->value == to_delete) {
+				q = p->next->next;
+				free(p->next);
+				p->next = q;
+			}
+		}
+	}
+	return head;
+}
+
+list list_delete_odd(list head) {
+	list p;
+	if(head == NULL) {
+		return NULL;
+	}
+	p = head->next;
+	free(head);
+	if(p == NULL) {
+		return NULL;
+	}
+	p->next = list_delete_odd(p->next);
+	return p;
+}
+
+list list_cut_below(list head, int cut_value) {
+	list p = head, q;
+	if(head == NULL) {
+		return NULL;
+	} else {
+		if(head->value < cut_value) {
+			head = head->next;
+		}
+		for(p = head; p->next != NULL; p = p->next) {
+			if(p->next->value < cut_value) {
+				q = p->next->next;
+				p->next = q;
+				break;
+			}
+		}
+	}
+	return head;
+}
+
+list list_dup(list head) {
+	list p;
+	if(head == NULL) {
+		return NULL;
+	}
+	p = malloc(sizeof(*p));
+	memcpy(p, head, sizeof(*p));
+	p->next = list_dup(head->next);
+	return p;
 }
 
 void list_print(list p)
