@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
 	 * Il primo  argomento letto a  riga di comando argv[1]  e` il
 	 * nome del file da cui leggere
 	 */
-	if ((in_f = fopen(argv[1], "r")) == NULL) {
+	if ((in_f = fopen("argv[1]", "r")) == NULL) {
 		PRINT_ERROR;
 		exit(EXIT_FAILURE);
 	}
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 	 * Il secondo argomento letto a  riga di comando argv[2] e` il
 	 * nome del file su cui scrivere
 	 */
-	if ((out_f = fopen(argv[2], "w")) == NULL) {
+	if ((out_f = fopen("argv[2]", "w")) == NULL) {
 		PRINT_ERROR;
 		exit(EXIT_FAILURE);
 	}
