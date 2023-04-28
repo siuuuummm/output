@@ -10,8 +10,7 @@ int main() {
     printf("Enter %d numbers\n", len);
     for(i = 0; i < len; i++) {
         fgets(v1, sizeof(v1), stdin);
-        v[i] = strtol(v1, NULL, 10);
-        
+        v[i] = strtol(v1, NULL, 10);  
     }
     printf("Stampa nell'ordine richiesto\n");
     for(i = 0; i < len; i += 2)
