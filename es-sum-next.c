@@ -11,8 +11,8 @@ int main(void) {
         v2[i] = strtol(v1, NULL, 10);
     }
     for(i = 0; i < len; i++) {
-        for(j = 0; j < len; j++) {
-            v1[i] += v2[j]; 
+        for(j = i + 1; j < len; j++) {
+            v2[i] += v2[j]; 
         }
     }
     for(i = 0; i < len; i++) {
