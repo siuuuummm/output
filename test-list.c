@@ -66,7 +66,17 @@ int main()
 	head = list_cat(head, tail);
 	head = list_insert_tail(head, 1);
 	head = list_insert_tail(head, 16);
-	head = list_delete_if(head, 15);
+	head = list_delete_if(head, 9);
+	head = list_insert_ordered(head, 20);
+	tail = list_insert_tail(tail, 36);
+	head = list_delete_odd(head);
+	head = list_insert_ordered(head, 90);
+	head = list_insert_ordered(head, 85);
+	head = list_insert_ordered(head, 100);
+	head = list_insert_ordered(head, 10);
+	head = list_insert_ordered(head, 23);
+	head = list_cut_below(head, 50);
+	head = list_dup(head);
 	/* ... print them... */
 	list_print(head);
 	/* ... and clean everything up  */
@@ -164,11 +174,63 @@ list list_insert_tail(list p, int val) {
 
 list list_delete_if(list head, int to_delete) {
 	node *temp;
-	for(; head->value != to_delete;) {
+	if(head->value == to_delete) {
+		temp = head;
 		head = head->next;
+		free(temp);
+		return head;
+	} else {
+		node *current = head;
+		while(current->next != NULL) {
+			if(current->next->value == to_delete) {
+				temp = current->next;
+				current->next = current->next->next;
+				free(temp);
+				break;
+			} else {
+				current = current->next;
+			}
+		}
 	}
-	temp = head;
-	head = head->next;
+	return head;
+}
+
+list list_delete_odd(list head) {
+	node *temp;
+	node *current = head;
+	int pos = 1;
+	while(current->next != NULL) {
+		if(pos % 2 == 1) {
+			temp = current->next;
+			current->next = current->next->next;
+		} else {
+			current = current->next;
+		}
+		pos++;
+	}
 	free(temp);
+	return head;
+}
+
+list list_cut_below(list head, int cut_value) {
+	node *temp;
+	node *current = head;
+	while(current->next != NULL) {
+		if(head->value < cut_value) {
+			temp = head;
+			head = head->next;
+		}
+		if(current->next->value < cut_value) {
+			temp = current->next;
+			current->next =current->next->next;
+		}else {
+			current = current->next;
+		}
+	}
+	free(temp);
+	return head;
+}
+
+list list_dup(list head) {
 	return head;
 }
