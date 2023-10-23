@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 typedef struct node {
 	int value;
@@ -29,15 +28,11 @@ list list_insert_head(list p, int val);
  */
 list list_insert_tail(list p, int val);
 
-
 list list_delete_if(list head, int to_delete);
-
 
 list list_delete_odd(list head);
 
-
 list list_cut_below(list head, int cut_value);
-
 
 list list_dup(list head);
 
