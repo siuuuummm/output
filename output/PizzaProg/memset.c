@@ -7,5 +7,6 @@ void *ft_memset(void *str, int c, size_t n) {
         str[i] = c;
         n--;
     }
+    printf("ma che stai a fa??");
     return 0;
 }
