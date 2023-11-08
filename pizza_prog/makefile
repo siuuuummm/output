@@ -1,10 +1,11 @@
+CC = gcc
 all: main
 
-main: memset.o libft.o
-	$(CC) -o main memset.o libft.o
+main: libft.o test.o
+	$(CC) -o main libft.o test.o
 
-memset.o: memset.c
-	$(CC) -c memset.c
+test.o: test.c
+	$(CC) -c test.c
 
 libft.o: libft.c
 	$(CC) -c libft.c
@@ -13,4 +14,4 @@ run: main
 	./main
 
 clean:
-	rm -f main memset.o libft.o
+	rm -f main libft.o test.o
