@@ -2,11 +2,13 @@
 #include "libft.c"
 
 int main(void) {                //ctrl + shift + frecce
-    char str[13] = {0};
+    char str[1000] = {0};
+    //char *str = NULL;
     char frase[1000] = {0};
-    //const char c = 'o';
-    //char * ret;
-    //int val;
+    //char *frase = NULL;
+    const char c = 'o';
+    char * ret;
+    int val;
     size_t value;
     printf("Inserire una stringa: ");
     fgets(str, sizeof(str), stdin);
@@ -14,8 +16,8 @@ int main(void) {                //ctrl + shift + frecce
     //printf("Risultato post-memeset: %s", str);
     //ft_bzero(str, 3);
     //printf("Risultato post-bzero: %s", str);
-    printf("Inserire seconda stringa: ");
-    fgets(frase, sizeof(frase), stdin);
+    //printf("Inserire seconda stringa: ");
+    //fgets(frase, sizeof(frase), stdin);
     //ft_memcpy(str, frase, sizeof(frase));
     //printf("Risultato post-memcpy: %s", str);
     //fgets(frase, sizeof(frase), stdin);
@@ -38,7 +40,11 @@ int main(void) {                //ctrl + shift + frecce
     //value = ft_strlcpy(str, frase, sizeof(str));
     //printf("Risultato post-strlcpy: %s",str);
     //printf(" with length %ld\n", value);
-    value = ft_strlcat(str, frase, sizeof(str));
-    printf("Risultato post-strlcat: %s", str);
-    printf("with length %ld", value);
+    //value = ft_strlcat(str, frase, sizeof(str));
+    //printf("Risultato post-strlcat: %s", str);
+    //printf("with length %ld", value);
+    //ret = ft_strchr(str, c);
+    //printf("Risultato post-strchr: %s", ret);
+    ret = ft_strrchr(str, c);
+    printf("Risultato post-strrchr: %s", ret);
 }

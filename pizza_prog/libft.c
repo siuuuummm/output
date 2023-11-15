@@ -14,7 +14,7 @@ void *ft_memset(void *str, int c, size_t n) {
 void ft_bzero(void *s, size_t n) {
     unsigned char *p = s;
     while(n > 0) {
-        *p = 48;
+        *p = '\0';
         p++;
         n--;
     }
@@ -92,49 +92,89 @@ int ft_memcmp(const void *str1, const void *str2, size_t n) {
 }
 
 size_t ft_strlen(const char *str) {
-    const char *p = str;
-    int count = 0;
-    while(*p != 0) {
-        count++;
-        p++;
+    if(str != NULL) {
+        const char *p = str;
+        while(*p != 0) {
+            p++;
+        }
+        return p - str - 1;
+    } else {
+        return NULL;
     }
-    return count - 1;
 }
 
 size_t ft_strlcpy(char * restrict dest, const char * restrict src, size_t n) {
-    char *p = dest;
-    const char *r = src;
-    int count = 0;
-    while(n > 0) {
-        if(*r != 0 && *r != '\n') {
-            *p = *r;
-            p++;
-            r++;
-            count++;
-        } else if(*p != 0) {
-            p++;
+    if(dest != NULL) {
+        char *p = dest;
+        const char *r = src;
+        int count = 0;
+        while(n > 0) {
+            if(*r != 0 && *r != '\n') {
+                *p = *r;
+                p++;
+                r++;
+                count++;
+            } else if(*p != 0) {
+                p++;
+            }
+            n--;
         }
-        n--;
+        return count;
+    } else {
+        return NULL;
     }
-    return count;
 }
 
 size_t ft_strlcat(char *dest, const char *src, size_t n) {
-    char *p = dest;
-    const char *r = src;
-    int count = 0;
-    while(n > 0) {
-        if(*p != 0 && *p != '\n') {
-            p++;
-            count++;
+    if(dest != NULL) {
+        char *p = dest;
+        const char *r = src;
+        int count = 0;
+        while(n > 0) {
+            if(*p != 0 && *p != '\n') {
+                p++;
+                count++;
+            }
+            if((*p == 0 || *p == '\n') && *r != 0) {
+                *p = *r;
+                p++;
+                r++;
+                count++;
+            }
+            n--;
         }
-        if((*p == 0 || *p == '\n') && *r != 0) {
-            *p = *r;
-            p++;
-            r++;
-            count++;
-        }
-        n--;
+        return count;
+    } else {
+        return NULL;
     }
-    return count;
+}
+
+char *ft_strchr(const char *str, int c) {
+    if(str != NULL) {
+        char *p = str;
+        while(*p != '\0') {
+            if(*p == c) {
+                return p;
+            }
+            *p = 0;
+            p++;
+        }
+    } else {
+        return NULL;
+    }
+}
+
+char *ft_strrchr(const char *str, int c) {
+    if(str != NULL) {
+        char *p = str;
+        while(*p != '\0') {
+            if(*p == c) {
+                
+            }
+            *p = 0;
+            p++;
+        }
+    } else {
+        return NULL;
+    }
 }
