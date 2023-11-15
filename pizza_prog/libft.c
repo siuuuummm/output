@@ -170,9 +170,10 @@ char *ft_strrchr(const char *str, int c) {
         while(*p != '\0') {
             if(*p == c) {
                 
+            } else {
+                *p = 0;
+                p++;
             }
-            
-            p++;
         }
     } else {
         return NULL;
