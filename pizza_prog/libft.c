@@ -171,7 +171,7 @@ char *ft_strrchr(const char *str, int c) {
             if(*p == c) {
                 
             }
-            *p = 0;
+            
             p++;
         }
     } else {
