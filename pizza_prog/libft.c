@@ -165,17 +165,42 @@ char *ft_strchr(const char *str, int c) {
 }
 
 char *ft_strrchr(const char *str, int c) {
-    if(str != NULL) {
-        char *p = str;
-        while(*p != '\0') {
-            if(*p == c) {
-                
-            } else {
-                *p = 0;
+    if (str == NULL) return NULL;
+
+    char *p = str;
+    char *occ = NULL;
+
+    while(*p != '\0') { 
+        if (*p == c) {
+            occ = p;
+        }
+        p++;
+    }
+
+    return occ;
+}
+
+char *ft_strnstr(const char *haystack, const char *needle, size_t n) {
+    if(haystack == NULL) return NULL;
+
+    char *p = haystack;
+    char *r = needle;
+    char *occ = NULL;
+
+    while (*p != '\0' && n > 0 && *p != *r ) {
+        *p = 0;
+        p++;
+        n--;
+        if(*p == *r && *p != '\n') {
+            occ = p;
+            while(*p == *r) {
+                if(*r == '\0') {
+                    return occ;
+                }
                 p++;
+                r++;
             }
         }
-    } else {
-        return NULL;
     }
+    return occ;
 }
