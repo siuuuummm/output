@@ -187,7 +187,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n) {
     char *r = needle;
     char *occ = NULL;
 
-    while (*p != '\0' && n > 0 && *p != *r ) {
+    while (*p != '\0' && n > 0) {
         *p = 0;
         p++;
         n--;

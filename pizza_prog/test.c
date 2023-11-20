@@ -47,6 +47,6 @@ int main(void) {                //ctrl + shift + frecce
     //printf("Risultato post-strchr: %s", ret);
     //ret = ft_strrchr(str, c);
     //printf("Risultato post-strrchr: %s", ret);
-    ret = ft_strnstr(str, frase, 15);
+    ret = ft_strnstr(str, frase, 7);
     printf("Risultato post-strnstr: %s\n", ret);
 }
