@@ -189,7 +189,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n) {
 
     while (*p != '\0' && n > 0) {
         *p = 0;
-        p++;
+        p++;                                //bisogna rifarlo, non worka bene
         n--;
         if(*p == *r && *p != '\n') {
             occ = p;
@@ -203,4 +203,26 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n) {
         }
     }
     return occ;
+}
+
+int ft_strncmp(const char *str1, const char *str2, size_t n) {
+    if(str1 == NULL && str2 == NULL) return 0;
+    int val;
+    while(n > 0) {
+        if(*str1 > *str2) {
+            return 1;
+        } else if(*str1 == *str2) {
+            val = 0;
+        } else {
+            return -1;
+        }
+        str1++;
+        str2++;
+        n--;
+    }
+    return val;
+}
+
+int atoi(const char *str) {
+    
 }

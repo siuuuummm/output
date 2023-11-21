@@ -47,6 +47,15 @@ int main(void) {                //ctrl + shift + frecce
     //printf("Risultato post-strchr: %s", ret);
     //ret = ft_strrchr(str, c);
     //printf("Risultato post-strrchr: %s", ret);
-    ret = ft_strnstr(str, frase, 15);
-    printf("Risultato post-strnstr: %s\n", ret);
+    //ret = ft_strnstr(str, frase, 15);
+    //printf("Risultato post-strnstr: %s\n", ret);
+    //val = ft_strncmp(str, frase, 4);
+    //if (val == 0) {
+    //    printf("Le stringhe sono uguali.\n");
+    //} else if (val < 0) {
+    //    printf("La prima stringa è minore della seconda.\n");
+    //} else {
+    //    printf("La prima stringa è maggiore della seconda.\n");
+    //}
+    
 }
