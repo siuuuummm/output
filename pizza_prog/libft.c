@@ -184,7 +184,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n) {
     if(haystack == NULL) return NULL;
 
     char *p = haystack;
-    char *r = needle;
+    const char *r = needle;
     char *occ = NULL;
 
     while (*p != '\0' && n > 0) {
@@ -223,6 +223,7 @@ int ft_strncmp(const char *str1, const char *str2, size_t n) {
     return val;
 }
 
-int atoi(const char *str) {
-    
+int ft_atoi(const char *str) {
+    if(str == NULL) return 0;
+    const char *p = str;
 }

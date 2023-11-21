@@ -16,8 +16,8 @@ int main(void) {                //ctrl + shift + frecce
     //printf("Risultato post-memeset: %s", str);
     //ft_bzero(str, 3);
     //printf("Risultato post-bzero: %s", str);
-    printf("Inserire seconda stringa: ");
-    fgets(frase, sizeof(frase), stdin);
+    //printf("Inserire seconda stringa: ");
+    //fgets(frase, sizeof(frase), stdin);
     //ft_memcpy(str, frase, sizeof(frase));
     //printf("Risultato post-memcpy: %s", str);
     //fgets(frase, sizeof(frase), stdin);
@@ -57,5 +57,6 @@ int main(void) {                //ctrl + shift + frecce
     //} else {
     //    printf("La prima stringa è maggiore della seconda.\n");
     //}
-    
+    val = ft_atoi(str);
+    printf("Risultato post-atoi: %d\n", val);
 }
