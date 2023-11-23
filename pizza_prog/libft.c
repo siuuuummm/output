@@ -225,5 +225,66 @@ int ft_strncmp(const char *str1, const char *str2, size_t n) {
 
 int ft_atoi(const char *str) {
     if(str == NULL) return 0;
-    const char *p = str;
+    char *p = str;
+    int val = 0;
+    while(*p >= '0' && *p <= '9') {
+        val *= 10;
+        val += *p - 48;
+        p++;
+    }
+    return val;
+}
+
+int ft_isalpha(int c) {
+    if((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int ft_isdigit(int c) {
+    if(c >= 48 && c <= 57) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int ft_isalnum(int c) {
+    if((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int ft_isascii(int c) {
+    if(c >= 0 && c <= 127) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int ft_isprint(int c) {
+    if(c >= 32 && c <= 126) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int ft_toupper(int c) {
+    while(c >= 97 && c <= 122) {
+        c -= 32;
+    }
+    return c;
+}
+
+int ft_tolower(int c) {
+    while(c >= 65 && c <= 90) {
+        c += 32;
+    }
+    return c;
 }

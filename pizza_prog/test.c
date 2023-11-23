@@ -8,7 +8,7 @@ int main(void) {                //ctrl + shift + frecce
     //char *frase = NULL;
     const char c = 'o';
     char * ret;
-    int val;
+    int val = 0;
     size_t value;
     printf("Inserire una stringa: ");
     fgets(str, sizeof(str), stdin);
@@ -57,6 +57,42 @@ int main(void) {                //ctrl + shift + frecce
     //} else {
     //    printf("La prima stringa è maggiore della seconda.\n");
     //}
-    val = ft_atoi(str);
-    printf("Risultato post-atoi: %d\n", val);
+    //val = ft_atoi(str);
+    //printf("Risultato post-atoi: %d\n", val);
+    //if(ft_isalpha(val)) {
+    //    printf("è alfabetica\n");
+    //} else {
+    //    printf("non è alfabetica\n");
+    //}
+    //if(ft_isdigit(val)) {
+    //    printf("è un numero\n");
+    //} else {
+    //    printf("non è un numero\n");
+    //}
+    //if(ft_isalnum(val)) {
+    //    printf("è alfanumerico\n");
+    //} else {
+    //    printf("non è alfanumerico\n");
+    //}
+    //if(ft_isascii(val)) {
+    //    printf("è ASCII\n");
+    //} else {
+    //    printf("non è ASCII\n");
+    //}
+    //if(ft_isprint(val)) {
+    //    printf("è stampabile\n");
+    //} else {
+    //    printf("non è stampabile\n");
+    //}
+    //while(str[val]) {
+    //    str[val] = ft_toupper(str[val]);
+    //    val++;
+    //}
+    //printf(str);
+    //while(str[val]) {
+    //    str[val] = ft_tolower(str[val]);
+    //    val++;
+    //}
+    //printf("%s", str);
+    
 }
